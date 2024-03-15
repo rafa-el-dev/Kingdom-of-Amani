@@ -1,0 +1,629 @@
+/* CSS Variables */
+:root {
+  --primary-color: #1a1a1a; /* Dark background */
+  --secondary-color: #222; /* Header/Navbar background */
+  --accent-color: #d4af37; /* Gold color */
+  --text-color: #fff; /* White text */
+  --font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3 {
+  font-weight: bolder;
+}
+
+/* General Body Styles */
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+/* Container Styling */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+  background-color: var(--secondary-color);
+  padding: 20px 0;
+}
+
+.logo {
+  color: var(--accent-color); /* Gold color for the logo */
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-family: "PT Serif", serif;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: var(--accent-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    padding: 0 15px;
+    z-index: 1;
+    background-color: var(--secondary-color);
+}
+
+.logo a, .nav-links a {
+    text-decoration: none;
+    color: var(--accent-color);
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #f5f5f5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        right: 0;
+        top: 60px;
+        background-color: var(--primary-color);
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        display: none;
+    }
+
+    .nav-links li {
+        padding: 15px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+
+/* Hero Section Styles */
+.hero {
+  height: 100vh;
+  background: url('../assets/king-leafar.webp') no-repeat center center/cover;
+  color: var(--text-color);
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-family: "PT Serif", serif;
+  font-weight: bolder;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero-btn {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.hero-btn:hover {
+  background-color: #f5f5f5;
+  color: var(--primary-color);
+}
+
+/* King's Legacy Section Styles */
+.kings-legacy {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  padding: 50px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--accent-color);
+}
+
+.timeline {
+  margin-bottom: 50px;
+}
+
+.timeline-item {
+  background: #333; 
+  margin: 20px 0;
+  padding: 20px;
+  border-left: 5px solid var(--accent-color);
+}
+
+.timeline-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f5f5f5;
+}
+
+.timeline-description {
+  font-size: 1rem;
+}
+
+/* Responsive Design for the Timeline */
+@media (max-width: 768px) {
+  .timeline-item {
+      padding: 15px;
+      margin: 15px;
+  }
+}
+
+/* The Kingdom Section Styles */
+.the-kingdom {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 50px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+}
+
+.kingdom-intro {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 1.2rem;
+}
+
+.kingdom-map {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.kingdom-map img {
+  max-width: 100%;
+  height: auto;
+  border: 3px solid var(--accent-color);
+}
+
+.kingdom-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.region {
+  background: var(--secondary-color);
+  padding: 20px;
+  margin: 10px;
+  flex-basis: 45%;
+  border-left: 5px solid var(--accent-color);
+  flex-basis: calc(40%);
+  transition: transform 0.3s ease;
+}
+
+.region:hover {
+  transform: translateY(-5px);
+}
+
+.region-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #f5f5f5;
+}
+
+.region-description {
+  font-size: 1rem;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .kingdom-details {
+      flex-direction: column;
+  }
+
+  .region {
+      flex-basis: 100%;
+      margin: 10px 0;
+  }
+}
+
+/* The Royal Court Section Styles */
+.royal-court {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 50px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 30px;
+}
+
+.court-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.member {
+  background: var(--secondary-color);
+  padding: 20px;
+  margin: 10px;
+  width: calc(33.333% - 20px);
+  text-align: center;
+  border: 1px solid var(--accent-color);
+}
+
+.member-img {
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.member-name {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: #f5f5f5;
+}
+
+.member-role {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 10px;
+  color: var(--accent-color);
+}
+
+.member-description {
+  font-size: 1rem;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 1024px) {
+  .member {
+      width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .member {
+      width: 100%;
+  }
+}
+
+/* Myths and Legends Section Styles */
+.myths-legends {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  padding: 50px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--accent-color); 
+  margin-bottom: 30px;
+}
+
+.stories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.story {
+  background: #333;
+  padding: 20px;
+  margin: 10px;
+  width: calc(50% - 20px);
+  border-left: 4px solid var(--accent-color);
+}
+
+.story-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #f5f5f5;
+}
+
+.story-summary {
+  font-size: 1rem;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .story {
+      width: 100%;
+  }
+}
+
+/* Media Gallery Section Styles */
+.media-gallery {
+  background-color: #282828;
+  color: var(--text-color);
+  padding: 50px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 30px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  padding: 0 15px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border: 3px solid var(--accent-color);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.05);
+}
+
+/* Join the Kingdom Section Styles */
+.join-kingdom {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 50px 0;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+}
+
+.join-message {
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+}
+
+.join-form {
+  display: inline-block;
+}
+
+.email-input {
+  padding: 10px;
+  border: 1px solid var(--accent-color);
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: var(--text-color);
+  background-color: var(--secondary-color);
+}
+
+.join-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--accent-color); 
+  color: var(--primary-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.join-btn:hover {
+  background-color: #f5f5f5;
+  color: var(--secondary-color);
+}
+
+/* Footer Section Styles */
+.site-footer {
+  background-color: #000;
+  color: var(--text-color);
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-content p {
+  margin: 10px 0;
+}
+
+.social-media {
+  display: inherit;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.social-media li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.social-media a {
+  color: var(--accent-color); 
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-media a:hover {
+  color: #f5f5f5;
+}
+
+
+.kingdom-map {
+  position: relative;
+}
+
+.point-of-interest {
+  position: absolute;
+  cursor: pointer;
+  color: var(--accent-color);
+  font-size: 100px
+}
+
+
+.point-of-interest:hover {
+  transform: scale(1.5);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4);
+  padding-top: 60px;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; 
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.media-gallery .container {
+  max-width: 1200px;
+  position: relative;
+  margin: auto;
+}
+
+.carousel {
+  overflow: hidden;
+}
+
+.carousel-slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
